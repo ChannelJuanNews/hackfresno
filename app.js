@@ -42,6 +42,10 @@ app.get('/', function(req, res){
 })
 
 
+app.get('/Marketplace', function(req, res){
+    res.sendFile(path.join(__dirname, '/marketplace.html'))
+})
+
 /* Upload  */
 app.post('/upload', function(req, res){
 
@@ -242,6 +246,31 @@ app.get('/topten', function(req, res){
     })
 
 
+})
+
+
+app.post('/ownkarma', function(req, res){
+    User.findOne({
+        username : req.body.username
+    }, function(err, user){
+        if (err){
+            return res.json(err)
+        }
+        res.json({
+            karma : user.karma
+        })
+    })
+})
+
+app.post('/spendkarma', function(req, res){
+    User.findOne({
+        username : req.body.username
+    }, function(err, user){
+        if (err){
+            return res.json(err)
+        }
+
+    })
 })
 
 app.get('/photo/:username' + '.jpg', function(req, res){
