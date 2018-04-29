@@ -222,7 +222,7 @@
                 }).then(function(data){
                     // handle data here
                     console.log(data)
-                    currentkarma.innerHTML = data.karma
+                    currentkarma.innerHTML = Number(data.karma).toFixed(2)
                 })
             }
 
@@ -255,7 +255,7 @@
                 }).then(function(data){
                     // update amount of karma on front end
                     console.log(data)
-                    currentkarma.innerHTML = data.karma
+                    currentkarma.innerHTML = Number(data.karma).toFixed(2)
                 })
 
             }
