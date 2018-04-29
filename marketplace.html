@@ -10,322 +10,346 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <!-- Bulma Version 0.6.2-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" integrity="sha256-2k1KVsNPRXxZOsXQ8aqcZ9GOOwmJTMoOB5o5Qp1d6/s=" crossorigin="anonymous" />
-  <style type="text/css">
-    html,body {
-      font-family: 'Open Sans';
-    }
-  </style>
-</head>
-    <body>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+     <style type="text/css">
+       html,body {
+         font-family: 'Quicksand', sans-serif;
+       }
+     </style>
+   </head>
+       <body>
 
-        <section class="hero is-fullheight is-default is-bold">
-        <div class="hero-head">
-          <nav class="navbar">
-            <div class="container">
-              <div class="navbar-brand">
-                <a class="navbar-item" href="../">
-                  <h1>KarmaApp</h1>
-                </a>
-                <span class="navbar-burger burger" data-target="navbarMenu">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </span>
-              </div>
-              <div id="navbarMenu" class="navbar-menu">
-       <div class="navbar-end"><div class="tabs is-right">
-        <ul>
-          <li ><a href="/">Home</a></li>
-          <li class="is-active" ><a href="/marketplace">Marketplace</a></li>
-          <li><a id="username-top" href="#"></a></li>
-          <li><span class="tag is-success" id="tag-karma"></span></li>
-        </ul>
-      </div>
-                </div>
-              </div>
-            </div>
-          </nav>
-        </div>
-
-
-    <div class="hero-body">
-
-        <div class="container">
-            <div class="column is-12">
+           <section class="hero is-fullheight is-default is-bold">
+           <div class="hero-head">
+             <nav class="navbar">
+               <div class="container">
+                 <div class="navbar-brand">
+                   <a class="navbar-item" href="../">
+                     <h1>Karma <i class="fa fa-universal-access" aria-hidden="true"></i></h1>
+                   </a>
+                   <span class="navbar-burger burger" data-target="navbarMenu">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                   </span>
+                 </div>
+                 <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-end"><div class="tabs is-right">
+              <ul>
+                <li ><a href="/">Home</a></li>
+                <li class="is-active"><a href="/marketplace">Marketplace</a></li>
+                <li><a id="username-top" href="#"></a></li>
+              </ul>
+         </div>
+                   </div>
+                 </div>
+               </div>
+             </nav>
+           </div>
 
 
-                <h1 class="title has-text-centered">Spend Your Karma</h1>
+       <div class="hero-body">
 
-                <section class="info-tiles has-text-centered">
-                  <div class="tile is-ancestor has-text-centered">
-                    <div class="tile is-parent">
-                      <article class="tile is-child box" id="massage">
-                        <p class="title">43</p>
-                        <p class="subtitle">Massage</p>
-                      </article>
-                    </div>
-                    <div class="tile is-parent">
-                      <article class="tile is-child box" id="hug">
-                        <p class="title">59</p>
-                        <p class="subtitle">Hug</p>
-                      </article>
-                    </div>
-                    <div class="tile is-parent">
-                      <article class="tile is-child box" id="backrub">
-                        <p class="title">100</p>
-                        <p class="subtitle">Back Rub</p>
-                      </article>
-                    </div>
-                    <div class="tile is-parent">
-                      <article class="tile is-child box" id="cookies">
-                        <p class="title">19</p>
-                        <p class="subtitle">Cookies</p>
-                      </article>
-                    </div>
-                  </div>
-                </section>
+           <div class="container">
+               <div class="column is-12">
 
 
-                <section class="info-tiles has-text-centered">
-                  <div class="tile is-ancestor has-text-centered">
-                    <div class="tile is-parent">
-                      <article class="tile is-child box" id="hackathonwin">
-                        <p class="title">1000</p>
-                        <p class="subtitle">Hackathon Win</p>
-                      </article>
-                    </div>
-                    <div class="tile is-parent">
-                      <article class="tile is-child box" id="hackfresnotshirt">
-                        <p class="title">35</p>
-                        <p class="subtitle">Hack Fresno <br /> T-Shirt</p>
-                      </article>
-                    </div>
-                    <div class="tile is-parent">
-                      <article class="tile is-child box" id="googlecloudapicredits">
-                        <p class="title">34</p>
-                        <p class="subtitle">Google Clould API Credits</p>
-                      </article>
-                    </div>
-                    <div class="tile is-parent">
-                      <article class="tile is-child box" id="redbull">
-                        <p class="title">19</p>
-                        <p class="subtitle">Red Bull</p>
-                      </article>
-                    </div>
-                  </div>
-                </section>
+                   <h1 class="title has-text-centered">Spend Your <span class="tag is-success" id="tag-karma"></span> Karma</h1>
+
+                   <section class="info-tiles has-text-centered">
+                     <div class="tile is-ancestor has-text-centered">
+                       <div class="tile is-parent">
+                         <article class="tile is-child box" id="massage">
+                           <figure class="image is-5by2" style="margin: 5%">
+                             <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8d6d77a200077530beff1d2b4f600be7&auto=format&fit=crop&w=1050&q=80">
+                           </figure>
+                           <p class="title">43 <i class="fa fa-universal-access" aria-hidden="true"></i></p>
+                           <p class="subtitle">Massage</p>
+                         </article>
+                       </div>
+                       <div class="tile is-parent">
+                         <article class="tile is-child box" id="hug">
+                           <figure class="image is-5by2" style="margin: 5%">
+                             <img src="https://images.unsplash.com/photo-1523181570274-b747401535c9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2036ca2a51523e3e51af9c64fc22cfb6&auto=format&fit=crop&w=1050&q=80">
+                           </figure>
+                           <p class="title">59 <i class="fa fa-universal-access" aria-hidden="true"></i></p>
+                           <p class="subtitle">Hug</p>
+                         </article>
+                       </div>
+                       <div class="tile is-parent">
+                         <article class="tile is-child box" id="backrub">
+                           <figure class="image is-5by2" style="margin: 5%">
+                             <img src="https://images.unsplash.com/photo-1514672013381-c6d0df1c8b18?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=95038fa8886f3c54793fba2c8a1320b3&auto=format&fit=crop&w=1050&q=80">
+                           </figure>
+                           <p class="title">100 <i class="fa fa-universal-access" aria-hidden="true"></i></p>
+                           <p class="subtitle">Back Rub</p>
+                         </article>
+                       </div>
+                       <div class="tile is-parent">
+                         <article class="tile is-child box" id="cookies">
+                           <figure class="image is-5by2" style="margin: 5%">
+                             <img src="https://images.unsplash.com/photo-1500511599662-5441d83fae18?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=018a32ddc52b04cc1b2a56ca136bd5d4&auto=format&fit=crop&w=1050&q=80">
+                           </figure>
+                           <p class="title">19 <i class="fa fa-universal-access" aria-hidden="true"></i></p>
+                           <p class="subtitle">Cookies</p>
+                         </article>
+                       </div>
+                     </div>
+                   </section>
 
 
-
-                <section class="info-tiles has-text-centered">
-                  <div class="tile is-ancestor has-text-centered">
-                    <div class="tile is-parent">
-                      <article class="tile is-child box" id="boba">
-                        <p class="title">43</p>
-                        <p class="subtitle">Boba</p>
-                      </article>
-                    </div>
-                    <div class="tile is-parent">
-                      <article class="tile is-child box" id="popcornchicken">
-                        <p class="title">74</p>
-                        <p class="subtitle">Popcorn Chicken</p>
-                      </article>
-                    </div>
-                    <div class="tile is-parent">
-                      <article class="tile is-child box" id="stickers">
-                        <p class="title">5</p>
-                        <p class="subtitle">Stickers</p>
-                      </article>
-                    </div>
-                    <div class="tile is-parent">
-                      <article class="tile is-child box" id="changethemusic">
-                        <p class="title">9</p>
-                        <p class="subtitle"> Change The Music </p>
-                      </article>
-                    </div>
-                  </div>
-                </section>
-
-                <section class="info-tiles has-text-centered">
-                  <div class="tile is-ancestor has-text-centered">
-                    <div class="tile is-parent">
-                      <article class="tile is-child box" id="water">
-                        <p class="title">4</p>
-                        <p class="subtitle">Water</p>
-                      </article>
-                    </div>
-                    <div class="tile is-parent">
-                      <article class="tile is-child box" id="oranges">
-                        <p class="title">7</p>
-                        <p class="subtitle">Oranges</p>
-                      </article>
-                    </div>
-                    <div class="tile is-parent">
-                      <article class="tile is-child box" id="coffee">
-                        <p class="title"> 3 </p>
-                        <p class="subtitle"> Coffee </p>
-                      </article>
-                    </div>
-                    <div class="tile is-parent">
-                      <article class="tile is-child box" id="internship">
-                        <p class="title">999</p>
-                        <p class="subtitle">Internship</p>
-                      </article>
-                    </div>
-                  </div>
-                </section>
+                   <section class="info-tiles has-text-centered">
+                     <div class="tile is-ancestor has-text-centered">
+                       <div class="tile is-parent">
+                         <article class="tile is-child box" id="hackathonwin">
+                           <figure class="image is-5by2" style="margin: 5%">
+                             <img src="https://images.unsplash.com/photo-1506645292803-579c17d4ba6a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e59dbb667ef51713f06aefcd21b6136e&auto=format&fit=crop&w=1050&q=80">
+                           </figure>
+                           <p class="title">1000 <i class="fa fa-universal-access" aria-hidden="true"></i></p>
+                           <p class="subtitle">Hackathon Win</p>
+                         </article>
+                       </div>
+                       <div class="tile is-parent">
+                         <article class="tile is-child box" id="hackfresnotshirt">
+                           <figure class="image is-5by2" style="margin: 5%">
+                             <img src="https://images.unsplash.com/photo-1512008678217-42b6b67a7dc8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b232237917467202c80f988057a3885b&auto=format&fit=crop&w=1188&q=80">
+                           </figure>
+                           <p class="title">35 <i class="fa fa-universal-access" aria-hidden="true"></i></p>
+                           <p class="subtitle">Hack Fresno <br /> T-Shirt</p>
+                         </article>
+                       </div>
+                       <div class="tile is-parent">
+                         <article class="tile is-child box" id="googlecloudapicredits">
+                           <figure class="image is-5by2" style="margin: 5%">
+                             <img src="https://images.unsplash.com/photo-1504164996022-09080787b6b3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b237330e1a78d52ec28208cbe21be778&auto=format&fit=crop&w=1050&q=80">
+                           </figure>
+                           <p class="title">34 <i class="fa fa-universal-access" aria-hidden="true"></i></p>
+                           <p class="subtitle">Google Clould API Credits</p>
+                         </article>
+                       </div>
+                       <div class="tile is-parent">
+                         <article class="tile is-child box" id="redbull">
+                           <figure class="image is-5by2" style="margin: 5%">
+                             <img src="https://images.unsplash.com/photo-1516570167907-c917f2928c05?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9c9dcd483b0581f3d26b64536cfd7972&auto=format&fit=crop&w=1050&q=80">
+                           </figure>
+                           <p class="title">19 <i class="fa fa-universal-access" aria-hidden="true"></i></p>
+                           <p class="subtitle">Red Bull</p>
+                         </article>
+                       </div>
+                     </div>
+                   </section>
 
 
 
-            </div>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-        </div>
+                   <section class="info-tiles has-text-centered">
+                     <div class="tile is-ancestor has-text-centered">
+                       <div class="tile is-parent">
+                         <article class="tile is-child box" id="boba">
+                           <p class="title">43 <i class="fa fa-universal-access" aria-hidden="true"></i></p>
+                           <p class="subtitle">Boba</p>
+                         </article>
+                       </div>
+                       <div class="tile is-parent">
+                         <article class="tile is-child box" id="popcornchicken">
+                           <p class="title">74 <i class="fa fa-universal-access" aria-hidden="true"></i></p>
+                           <p class="subtitle">Popcorn Chicken</p>
+                         </article>
+                       </div>
+                       <div class="tile is-parent">
+                         <article class="tile is-child box" id="stickers">
+                           <p class="title">5 <i class="fa fa-universal-access" aria-hidden="true"></i></p>
+                           <p class="subtitle">Stickers</p>
+                         </article>
+                       </div>
+                       <div class="tile is-parent">
+                         <article class="tile is-child box" id="changethemusic">
+                           <p class="title">9 <i class="fa fa-universal-access" aria-hidden="true"></i></p>
+                           <p class="subtitle"> Change The Music </p>
+                         </article>
+                       </div>
+                     </div>
+                   </section>
 
-    </div>
-    </section>
-
-
-    <style media="screen">
-        .box:hover{
-             background-color: #00E5EE;
-        }
-    </style>
-
-
-    <script type="text/javascript">
-        window.onload = function(){
-            storage = window.localStorage;
-            let username = storage.getItem('username')
-            let tabusername = document.getElementById("username-top")
-            tabusername.innerHTML = username
-
-
-            let currentkarma = document.getElementById('tag-karma')
-
-            function getOwnKarma(){
-                fetch('/ownkarma', {
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    method: 'post',
-                    body : JSON.stringify({
-                        username    : storage.getItem('username')
-                    })
-
-                }).then(function(response){
-                    return response.json()
-                }).then(function(data){
-                    // handle data here
-                    console.log(data)
-                    currentkarma.innerHTML = Number(data.karma).toFixed(2)
-                })
-            }
-
-            function spendKarma(amt){
-
-                if ( !((currentkarma.innerHTML - amt) >= 0) ){
-                    return alert('Not enough funds')
-                }
-
-
-                let con = confirm("Are you sure you want to spend " + amt + " karma?")
-                console.log(con)
-                if (!con){
-                    return
-                }
-
-                fetch('/spendkarma', {
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    method: 'post',
-                    body : JSON.stringify({
-                        username    : storage.getItem('username'),
-                        spent : amt
-                    })
-
-                }).then(function(response){
-                    return response.json()
-                }).then(function(data){
-                    // update amount of karma on front end
-                    console.log(data)
-                    currentkarma.innerHTML = Number(data.karma).toFixed(2)
-                })
-
-            }
-
-
-            $('#massage').click(function(){
-                spendKarma(43)
-            })
-            $('#hug').click(function(){
-                spendKarma(59)
-            })
-            $('#backrub').click(function(){
-                spendKarma(100)
-            })
-            $('#cookies').click(function(){
-                spendKarma(19)
-            })
-            $('#hackathonwin').click(function(){
-                spendKarma(1000)
-            })
-            $('#hackfresnotshirt').click(function(){
-                spendKarma(35)
-            })
-            $('#googlecloudapicredits').click(function(){
-                spendKarma(34)
-            })
-            $('#redbull').click(function(){
-                spendKarma(19)
-            })
-            $('#boba').click(function(){
-                spendKarma(43)
-            })
-            $('#popcornchicken').click(function(){
-                spendKarma(74)
-            })
-            $('#stickers').click(function(){
-                spendKarma(5)
-            })
-            $('#changethemusic').click(function(){
-                spendKarma(9)
-            })
-            $('#water').click(function(){
-                spendKarma(4)
-            })
-            $('#oranges').click(function(){
-                spendKarma(7)
-            })
-            $('#coffee').click(function(){
-                spendKarma(3)
-            })
-            $('#internship').click(function(){
-                spendKarma(999)
-            })
-
-
-            getOwnKarma()
-
-            var burger = document.querySelector('.burger');
-            var menu = document.querySelector('#'+burger.dataset.target);
-            burger.addEventListener('click', function() {
-                burger.classList.toggle('is-active');
-                menu.classList.toggle('is-active');
-            })
+                   <section class="info-tiles has-text-centered">
+                     <div class="tile is-ancestor has-text-centered">
+                       <div class="tile is-parent">
+                         <article class="tile is-child box" id="water">
+                           <p class="title">4 <i class="fa fa-universal-access" aria-hidden="true"></i></p>
+                           <p class="subtitle">Water</p>
+                         </article>
+                       </div>
+                       <div class="tile is-parent">
+                         <article class="tile is-child box" id="oranges">
+                           <p class="title">7 <i class="fa fa-universal-access" aria-hidden="true"></i></p>
+                           <p class="subtitle">Oranges</p>
+                         </article>
+                       </div>
+                       <div class="tile is-parent">
+                         <article class="tile is-child box" id="coffee">
+                           <p class="title">3 <i class="fa fa-universal-access" aria-hidden="true"></i></p>
+                           <p class="subtitle"> Coffee </p>
+                         </article>
+                       </div>
+                       <div class="tile is-parent">
+                         <article class="tile is-child box" id="internship">
+                           <p class="title">999 <i class="fa fa-universal-access" aria-hidden="true"></i></p>
+                           <p class="subtitle">Internship</p>
+                         </article>
+                       </div>
+                     </div>
+                   </section>
 
 
 
-        }
-    </script>
+               </div>
+                   <br />
+                   <br />
+                   <br />
+                   <br />
+                   <br />
+           </div>
+
+       </div>
+       </section>
+
+
+       <style media="screen">
+           .box:hover{
+                background-color: #00E5EE;
+           }
+       </style>
+
+
+       <script type="text/javascript">
+           window.onload = function(){
+               storage = window.localStorage;
+               let username = storage.getItem('username')
+               let tabusername = document.getElementById("username-top")
+               tabusername.innerHTML = 'Hi, ' + username + '!';
+
+
+               let currentkarma = document.getElementById('tag-karma')
+
+               function getOwnKarma(){
+                   fetch('/ownkarma', {
+                       headers: {
+                           'Accept': 'application/json',
+                           'Content-Type': 'application/json'
+                       },
+                       method: 'post',
+                       body : JSON.stringify({
+                           username    : storage.getItem('username')
+                       })
+
+                   }).then(function(response){
+                       return response.json()
+                   }).then(function(data){
+                       // handle data here
+                       console.log(data)
+                       currentkarma.innerHTML = Number(data.karma).toFixed(2)
+                   })
+               }
+
+               function spendKarma(amt){
+
+                   if ( !((currentkarma.innerHTML - amt) >= 0) ){
+                       return alert('Not enough funds')
+                   }
+
+
+                   let con = confirm("Are you sure you want to spend " + amt + " karma?")
+                   console.log(con)
+                   if (!con){
+                       return
+                   }
+
+                   fetch('/spendkarma', {
+                       headers: {
+                           'Accept': 'application/json',
+                           'Content-Type': 'application/json'
+                       },
+                       method: 'post',
+                       body : JSON.stringify({
+                           username    : storage.getItem('username'),
+                           spent : amt
+                       })
+
+                   }).then(function(response){
+                       return response.json()
+                   }).then(function(data){
+                       // update amount of karma on front end
+                       console.log(data)
+                       currentkarma.innerHTML = Number(data.karma).toFixed(2)
+                   })
+
+               }
+
+
+               $('#massage').click(function(){
+                   spendKarma(43)
+               })
+               $('#hug').click(function(){
+                   spendKarma(59)
+               })
+               $('#backrub').click(function(){
+                   spendKarma(100)
+               })
+               $('#cookies').click(function(){
+                   spendKarma(19)
+               })
+               $('#hackathonwin').click(function(){
+                   spendKarma(1000)
+               })
+               $('#hackfresnotshirt').click(function(){
+                   spendKarma(35)
+               })
+               $('#googlecloudapicredits').click(function(){
+                   spendKarma(34)
+               })
+               $('#redbull').click(function(){
+                   spendKarma(19)
+               })
+               $('#boba').click(function(){
+                   spendKarma(43)
+               })
+               $('#popcornchicken').click(function(){
+                   spendKarma(74)
+               })
+               $('#stickers').click(function(){
+                   spendKarma(5)
+               })
+               $('#changethemusic').click(function(){
+                   spendKarma(9)
+               })
+               $('#water').click(function(){
+                   spendKarma(4)
+               })
+               $('#oranges').click(function(){
+                   spendKarma(7)
+               })
+               $('#coffee').click(function(){
+                   spendKarma(3)
+               })
+               $('#internship').click(function(){
+                   spendKarma(999)
+               })
+
+
+               getOwnKarma()
+
+               var burger = document.querySelector('.burger');
+               var menu = document.querySelector('#'+burger.dataset.target);
+               burger.addEventListener('click', function() {
+                   burger.classList.toggle('is-active');
+                   menu.classList.toggle('is-active');
+               })
 
 
 
-    </body>
-</html>
+           }
+       </script>
+
+
+
+       </body>
+   </html>
