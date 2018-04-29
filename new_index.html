@@ -324,8 +324,8 @@
                 }).then(function(res){
                     return res.json()
                 }).then(function(data){
-                
-                    if (isNaN(data)){
+
+                    if (!isNaN(data)){
                         totalkarma.innerHTML = ""
                     }
                     else {
@@ -360,7 +360,7 @@
                     return response.json();
                 }).then(function(data) {
                     console.log(data)
-                    if (isNaN(data)){
+                    if (!isNaN(data)){
                         yourkarma.innerHTML = ""
                     }
                     else {
