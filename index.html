@@ -1,0 +1,97 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<video id="screenshot-video" autoplay></video>
+<img id="screenshot-img" src="">
+<canvas style="display:none;"></canvas>
+
+<script>
+
+    function handleSuccess(stream) {
+      video.srcObject = stream;
+    }
+
+    function handleError() {
+        console.log('error')
+    }
+
+
+    function dataURItoBlob(dataURI) {
+        // convert base64 to raw binary data held in a string
+        var byteString = atob(dataURI.split(',')[1]);
+
+        // separate out the mime component
+        var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+        // write the bytes of the string to an ArrayBuffer
+        var arrayBuffer = new ArrayBuffer(byteString.length);
+        var _ia = new Uint8Array(arrayBuffer);
+        for (var i = 0; i < byteString.length; i++) {
+            _ia[i] = byteString.charCodeAt(i);
+        }
+
+        var dataView = new DataView(arrayBuffer);
+        var blob = new Blob([dataView], { type: mimeString });
+        return blob;
+    }
+
+    function getSentiment(datauri){
+
+
+
+        fetch('/upload', {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: 'post',
+            body : JSON.stringify({
+                img         : datauri,
+                username    : 'channeljuannews'
+            })
+        }).then(function(response) {
+            console.log(response)
+            return response.json();
+        }).then(function(myJson) {
+
+            //let total = 0
+            //total =  myJson.Angry + myJson.Fear + myJson.Happy + myJson.Neutral + myJson.Sad + myJson.Surprise
+
+            console.log(JSON.parse(myJson).frames[0].people[0].emotions);
+            //console.log({
+            //    total : total
+            //})
+        }).catch(function(err){
+
+        })
+    }
+
+    //const button = document.querySelector('#screenshot-button');
+    //const img = document.querySelector('#screenshot-img');
+    //const video = document.querySelector('#screenshot-video');
+
+    const canvas = document.createElement('canvas');
+    const img = document.querySelector('#screenshot-img');
+    const video = document.querySelector('#screenshot-video');
+
+    setInterval( function(){
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        canvas.getContext('2d').drawImage(video, 0, 0);
+        // Other browsers will fall back to image/png
+        //img.src = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream")
+        //window.location.href=img.src
+        //getSentiment(img.src)
+
+        img.src = canvas.toDataURL("image/jpeg")
+
+        getSentiment(canvas.toDataURL("image/jpeg"))
+
+    },7000)
+
+    function handleSuccess(stream) {
+        video.srcObject = stream;
+    }
+
+    const constraints = { video : true };
+    navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError);
+</script>
