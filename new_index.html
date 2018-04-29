@@ -335,8 +335,9 @@
 
                 if (!storage.getItem('username')){
                     return console.log("NO USER YET", storage.getItem('username'))
-
                 }
+
+                console.log('we have a username now', storage.getItem('username') )
 
                 fetch('/upload', {
                     headers: {
