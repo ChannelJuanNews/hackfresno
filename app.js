@@ -22,11 +22,6 @@ let base64ToImage = require('base64-to-image')
 let ngrokurl = 'https://hackfresno.ruelas.me' + '/photo/'
 
 
-
-/*for uploading files*/
-let upload = multer({ dest: __dirname + '/uploads/' });
-let type = upload.single('upl');
-
 let app = express()
 
 /* Body Parser */
