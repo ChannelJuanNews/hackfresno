@@ -351,8 +351,8 @@
                     console.log(response)
 
                     let htmlstring = ""
-                    for (let i = response.length - 1; i > 0; i--){
-                        htmlstring += "<tr id="+(i + 1)+">"+"<th>"+ (i + 1) +"</th>"+"<td>"+response[i].username +"</td>" + "<td>"+ Number(response[i].karma).toFixed(2) +"</td>"+ "</tr>"
+                    for (let i = response.length - 1; i >= 0; i--){
+                        htmlstring += "<tr id="+(i + 1)+">"+"<th>"+ ( response.length - (i)  )+"</th>"+"<td>"+response[i].username +"</td>" + "<td>"+ Number(response[i].karma).toFixed(2) +"</td>"+ "</tr>"
                     }
 
                     console.log(htmlstring)
