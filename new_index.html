@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> KarmaApp </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Bulma Version 0.6.2-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" integrity="sha256-2k1KVsNPRXxZOsXQ8aqcZ9GOOwmJTMoOB5o5Qp1d6/s=" crossorigin="anonymous" />
+  <style type="text/css">
+    html,body {
+      font-family: 'Open Sans';
+    }
+  </style>
+</head>
+<body>
+  <section class="hero is-fullheight is-default is-bold">
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="../">
+            <h1>KarmaApp</h1>
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+ <div class="navbar-end"><div class="tabs is-right">
+  <ul>
+    <li class="is-active"><a href="/">Home</a></li>
+    <li><a href="/martketplace">Marketplace</a></li>
+    <li><a id="username-top" href="#"></a></li>
+  </ul>
+</div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+    <div class="hero-body">
+
+
+
+        <div class="modal" id="username-modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <!-- Any other Bulma elements you want -->
+                <article class="message">
+                    <div class="message-body">
+                        <h1 id="choose-user-name">Please Choose a username before you continue</h1>
+                        <input  id="username-text" class="input" type="text" placeholder="Text input">
+                    </div>
+                </article>
+            </div>
+        </div>
+
+
+      <div class="container has-text-centered">
+        <div class="columns is-vcentered">
+          <div class="column is-6">
+              <div class="left">
+                  <h1 class="title is-1">Your Karma</h1>
+                  <hr />
+
+
+
+                  <h3 class="subtitle is-3">900</h3>
+                  <div class="web-cam">
+                      <video id="screenshot-video" autoplay playsinline></video>
+                  </div>
+
+              </div>
+
+          </div>
+          <div class="column is-6">
+              <div class="right">
+                  <h1 class="title is-1"> Total Karma </h1>
+                   <hr />
+                  <h3 class="subtitle is-3" id="your-karma">9000</h3>
+                  <div class="web-cam">
+                      <video id="screenshot-vide-2" style="display:none" autoplay playsinline></video>
+                  </div>
+
+              </div>
+          </div>
+        </div>
+        <hr />
+        <div class="container has-text-centered">
+
+
+
+
+            <table class="table" id="leaderboard">
+              <thead>
+                <tr>
+                  <th><abbr title="Position">Pos</abbr></th>
+                  <th>Username</th>
+                  <th><abbr title="Karma">Karma</abbr></th>
+
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th><abbr title="Position">Pos</abbr></th>
+                  <th>Username</th>
+                  <th><abbr title="Karma">Karma</abbr></th>
+                </tr>
+              </tfoot>
+              <tbody>
+                  <tr id="one">
+                      <th> 1 </th>
+                      <td> testuser </td>
+                      <td> 38 </td>
+                  </tr>
+                  <tr id="two">
+                      <th> 2 </th>
+                      <td> testuser </td>
+                      <td> 38 </td>
+                  </tr>
+                  <tr id="three">
+                      <th> 3 </th>
+                      <td> testuser </td>
+                      <td> 38 </td>
+                  </tr>
+                  <tr id="four">
+                      <th> 4 </th>
+                      <td> testuser </td>
+                      <td> 38 </td>
+                  </tr>
+                  <tr id="five">
+                      <th> 5</th>
+                      <td> testuser </td>
+                      <td> 38 </td>
+                  </tr>
+                  <tr id="six">
+                      <th> 6 </th>
+                      <td> testuser </td>
+                      <td> 38 </td>
+                  </tr>
+                  <tr id="seven">
+                      <th> 7 </th>
+                      <td> testuser </td>
+                      <td> 38 </td>
+                  </tr>
+                  <tr id="eight">
+                      <th> 8 </th>
+                      <td> testuser </td>
+                      <td> 38 </td>
+                  </tr>
+                  <tr id="nine">
+                      <th> 9 </th>
+                      <td> testuser </td>
+                      <td> 38 </td>
+                  </tr>
+                  <tr id="ten">
+                      <th> 10 </th>
+                      <td> testuser </td>
+                      <td> 38 </td>
+                  </tr>
+              </tbody>
+            </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+    <div class="hero-foot">
+      <div class="container">
+        <div class="tabs is-centered">
+          <ul>
+            <li><a>And this at the bottom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style media="screen">
+          .table {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        #leaderboard {
+
+            max-height: 100px;
+            overflow-y: scroll;
+        }
+
+        .web-cam {
+            width: 250px;
+            height: 250px;
+            border-radius: 125px;
+            -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        video {
+            vertical-align:middle;
+            justify-content:center;
+
+        }
+
+  </style>
+
+
+  <script async type="text/javascript">
+
+        window.onload = function(){
+
+            storage = window.localStorage;
+            let username = storage.getItem('username')
+
+            if (!username){
+                // trigger modal and ask for username
+                let modal = document.getElementById("username-modal");
+                modal.classList.add("is-active");
+
+
+
+                let username = document.getElementById("username-text")
+
+                username.addEventListener('keyup', function(event){
+                    if (event.key == "Enter"){
+                        let possibleusername = username.value
+                        username.disabled = true
+
+                        fetch('/checkuser', {
+                            headers: {
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json'
+                             },
+                            method : "POST",
+                            body : JSON.stringify({
+                                username : possibleusername
+                            })
+                        }).then(function(response) {
+                            return response.json()
+                        }).then(function(data){
+
+                            if (data.userExists){
+                                let prompt = document.getElementById("choose-user-name");
+                                prompt.innerHTML = "Please Choose Another Username"
+                                prompt.style.color = "#F00";
+                                username.disabled = false
+                                username.value = ""
+                            }
+                            else {
+                                storage.setItem('username', possibleusername)
+                                username = storage.getItem('username')
+                                let tabusername = document.getElementById("username-top")
+                                tabusername.innerHTML = username
+                            }
+
+                        })
+                    }
+                })
+
+            }
+            else {
+                // we have a username and we are chill
+                console.log('username is chill')
+                let tabusername = document.getElementById("username-top")
+                tabusername.innerHTML = username
+
+            }
+
+
+            function handleSuccess(stream) {
+              video.srcObject = stream;
+            }
+            function handleError() {
+                console.log('error')
+            }
+
+
+            // now we do real time video
+            const canvas = document.createElement('canvas');
+            const video = document.querySelector('#screenshot-video');
+
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0);
+
+
+            const constraints = { video : true };
+            navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError);
+
+            // now we load the leader board
+
+
+
+
+            var burger = document.querySelector('.burger');
+            var menu = document.querySelector('#'+burger.dataset.target);
+            burger.addEventListener('click', function() {
+                burger.classList.toggle('is-active');
+                menu.classList.toggle('is-active');
+            })
+        }
+
+  </script>
+</body>
+</html>
