@@ -47,7 +47,6 @@
     <div class="hero-body">
 
 
-
         <div class="modal" id="username-modal">
             <div class="modal-background"></div>
             <div class="modal-content">
@@ -70,8 +69,7 @@
                   <hr />
 
 
-
-                  <h3 class="subtitle is-3">900</h3>
+                  <h3 class="subtitle is-3" id="your-karma"></h3>
                   <div class="web-cam">
                       <video id="screenshot-video" autoplay playsinline></video>
                   </div>
@@ -83,7 +81,7 @@
               <div class="right">
                   <h1 class="title is-1"> Total Karma </h1>
                    <hr />
-                  <h3 class="subtitle is-3" id="your-karma">9000</h3>
+                  <h3 class="subtitle is-3" id="total-karma"></h3>
                   <div class="web-cam">
                       <video id="screenshot-vide-2" style="display:none" autoplay playsinline></video>
                   </div>
@@ -280,6 +278,7 @@
                                 username = storage.getItem('username')
                                 let tabusername = document.getElementById("username-top")
                                 tabusername.innerHTML = username
+                                modal.classList.remove("is-active");
                             }
 
                         })
@@ -315,6 +314,61 @@
 
             const constraints = { video : true };
             navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError);
+
+
+            // get the total amount of karma at any given point
+            let totalkarma = document.getElementById('total-karma')
+            setInterval(function(){
+                fetch('/karma', {
+
+                }).then(function(res){
+                    return res.json()
+                }).then(function(data){
+                    totalkarma.innerHTML = data.karma
+                })
+            }, 3000)
+
+
+            // capture your own karma
+            let yourkarma = document.getElementById('your-karma')
+            function getSentiment(datauri){
+
+                if (!storage.getItem('username')){
+                    return console.log("NO USER YET", storage.getItem('username'))
+
+                }
+
+                fetch('/upload', {
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    method: 'post',
+                    body : JSON.stringify({
+                        img         : datauri,
+                        username    : storage.getItem('username')
+                    })
+                }).then(function(response) {
+                    //console.log(response)
+                    return response.json();
+                }).then(function(data) {
+                    console.log(data)
+                    yourkarma.innerHTML = data.karma
+
+                }).catch(function(err){
+                    console.log('error sending datauri')
+                })
+            }
+
+
+            setInterval(function(){
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                canvas.getContext('2d').drawImage(video, 0, 0);
+                getSentiment(canvas.toDataURL("image/jpeg"))
+            }, 3000)
+
+
 
             // now we load the leader board
 

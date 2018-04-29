@@ -22,7 +22,7 @@ mongoose.connect('mongodb://admin:hackfresno2018@ds161459.mlab.com:61459/hackfre
 
 
 /*base URL for retreieveing photos*/
-let ngrokurl = 'https://6b079e94.ngrok.io' + '/photo/'
+let ngrokurl = 'https://da64dcdb.ngrok.io' + '/photo/'
 
 /*instantiate express app*/
 let app = express()
@@ -61,7 +61,9 @@ app.post('/upload', function(req, res){
             try {
                   base64ToImage(base64Str,filepath,optionalObj);
             }
-            catch(error) { /*ignore*/}
+            catch(error) { /*ignore*/
+                console.log('not saving image')
+            }
             let response = function(emo_res) { res.json(emo_res) }
             let logError = function(emo_err) { console.log(err); }
 
@@ -83,10 +85,22 @@ app.post('/upload', function(req, res){
                     if (user){
                         // update user karma
                         let test = JSON.parse(body)
+
+                        if(!test.frames){
+
+                            console.log(test)
+
+                            return res.json({
+                                error : true,
+                                message : "No Data Was Returned, No Frames"
+                            })
+                        }
+
+
                         if(test.frames[0].people.length == 0){
                             return res.json({
                                 error : true,
-                                message : "No Data Was Returned"
+                                message : "No Data Was Returned, No People"
                             })
                         }
                         let emotions = JSON.parse(body).frames[0].people[0].emotions
@@ -125,10 +139,10 @@ app.post('/upload', function(req, res){
                         newUser.username = req.body.username
 
                         let test = JSON.parse(body)
-                        if(test.frames[0].people.length == 0){
+                        if(!test.frames){
                             return res.json({
                                 error : true,
-                                message : "No Data Was Returned"
+                                message : "No Data Was Returned, No Frames"
                             })
                         }
 
@@ -176,7 +190,16 @@ app.post('/upload', function(req, res){
 
 app.get('/karma', function(req, res){
     User.find({}, function(err, users){
-        res.json(users)
+        let karma = 0
+
+        for (let i = 0; i< users.length; i++){
+            if (typeof users[i].karma == "number"){
+                karma += users[i].karma
+            }
+        }
+        res.json({
+            karma : karma
+        })
     })
 })
 
