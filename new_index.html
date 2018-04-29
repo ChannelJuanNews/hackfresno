@@ -281,7 +281,7 @@
                         // do nothing
                     }
                     else {
-                        totalkarma.innerHTML = data.karma
+                        totalkarma.innerHTML = Math.round(data.karma)
                     }
                 })
             }, 3000)
@@ -316,7 +316,7 @@
                         // do nothing
                     }
                     else {
-                        yourkarma.innerHTML = data.karma
+                        yourkarma.innerHTML = Math.round(data.karma)
                     }
 
 
@@ -342,13 +342,24 @@
             window.tablebody = tablebody
             function getTopTen(){
                 console.log(tablebody)
-                /*
-                <tr id="one">
-                    <th> 1 </th>
-                    <td></td>
-                    <td></td>
-                </tr>
-                */
+
+                fetch('/topten', {
+
+                }).then(function(response){
+                    return response.json()
+                }).then(function(response){
+                    console.log(response)
+
+                    let htmlstring = ""
+                    for (let i = 0; i < response.length; i++){
+                        htmlstring += "<tr id="+(i+1)+">"+"<th>"+ (i+1) +"</th>"+"<td>"+response[i].username +"</td>" + "<td>"+ Math.round(response[i].karma) +"</td>"+ "</tr>"
+                    }
+
+                    console.log(htmlstring)
+                    tablebody.innerHTML = htmlstring
+                })
+
+
             }
 
             getTopTen()
