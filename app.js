@@ -232,6 +232,16 @@ app.post('/checkuser', function(req, res){
 
 app.get('/topten', function(req, res){
 
+    User.find().sort({karma:1}).limit(10).exec(function(err, users){
+        if (err){
+            return res.json(err)
+        }
+        else {
+            res.json(users)
+        }
+    })
+
+
 })
 
 app.get('/photo/:username' + '.jpg', function(req, res){
