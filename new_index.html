@@ -277,7 +277,7 @@
                     return res.json()
                 }).then(function(data){
 
-                    if (!isNaN(data.karma)){
+                    if (isNaN(data.karma)){
                         // do nothing
                     }
                     else {
