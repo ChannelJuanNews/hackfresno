@@ -65,7 +65,8 @@
         <div class="columns is-vcentered">
           <div class="column is-6">
               <div class="left">
-                  <h1 class="title is-1">Your Karma</h1>
+                  <h1 class="title is-1">Your Karma</h1> <span id="countdown"></span>
+
                   <hr />
 
 
@@ -83,7 +84,7 @@
                    <hr />
                   <h3 class="subtitle is-3" id="total-karma"></h3>
                   <div class="web-cam">
-                      <video id="screenshot-vide-2" style="display:none" autoplay playsinline></video>
+                      <video id="screenshot-video-2" autoplay playsinline></video>
                   </div>
 
               </div>
@@ -181,6 +182,12 @@
 
         }
 
+        #countdown {
+            display: inline;
+            padding-left: 10px;
+            font-weight: bold;
+        }
+
   </style>
 
 
@@ -249,15 +256,17 @@
 
             function handleSuccess(stream) {
               video.srcObject = stream;
+              video2.srcObject = stream;
             }
             function handleError() {
-                console.log('error')
+                console.error("Could not use getUserMedia()")
             }
 
 
             // now we do real time video
             const canvas = document.createElement('canvas');
             const video = document.querySelector('#screenshot-video');
+            const video2 = document.querySelector('#screenshot-video-2');
 
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
@@ -326,14 +335,24 @@
             }
 
 
-
+            var ninesecs = 0
+            let countdown  = document.getElementById('countdown')
 
             setInterval(function(){
-                canvas.width = video.videoWidth;
-                canvas.height = video.videoHeight;
-                canvas.getContext('2d').drawImage(video, 0, 0);
-                getSentiment(canvas.toDataURL("image/jpeg"))
-            }, 9000)
+
+                ninesecs++
+
+                if (ninesecs >= 9){
+                    canvas.width = video.videoWidth;
+                    canvas.height = video.videoHeight;
+                    canvas.getContext('2d').drawImage(video, 0, 0);
+                    getSentiment(canvas.toDataURL("image/jpeg"))
+                    ninesecs = 0
+                }
+
+                countdown.innerHTML = ninesecs
+
+            }, 1000)
 
 
 
