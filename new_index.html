@@ -324,7 +324,13 @@
                 }).then(function(res){
                     return res.json()
                 }).then(function(data){
-                    totalkarma.innerHTML = data.karma
+                
+                    if (isNaN(data)){
+                        totalkarma.innerHTML = ""
+                    }
+                    else {
+                        totalkarma.innerHTML = data.karma
+                    }
                 })
             }, 3000)
 
@@ -354,7 +360,13 @@
                     return response.json();
                 }).then(function(data) {
                     console.log(data)
-                    yourkarma.innerHTML = data.karma
+                    if (isNaN(data)){
+                        yourkarma.innerHTML = ""
+                    }
+                    else {
+                        yourkarma.innerHTML = data.karma
+                    }
+
 
                 }).catch(function(err){
                     console.log('error sending datauri')
@@ -372,7 +384,6 @@
 
 
             // now we load the leader board
-
 
 
 

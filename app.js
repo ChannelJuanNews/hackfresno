@@ -228,6 +228,12 @@ app.post('/checkuser', function(req, res){
     })
 })
 
+
+
+app.get('/topten', function(req, res){
+
+})
+
 app.get('/photo/:username' + '.jpg', function(req, res){
     res.sendFile( path.join( __dirname , "/uploads/" + req.params.username + ".jpeg") )
 })
