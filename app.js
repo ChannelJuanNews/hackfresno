@@ -1,31 +1,22 @@
 
 let fs = require('fs');
 let path = require('path');
-let busboy = require('connect-busboy');
-let connect = require('connect');
+
 let express = require('express');
 let bodyParser = require('body-parser')
-let multer  = require('multer');
-let http = require('http')
+
 let request = require('request');
 
-let fetch = require('node-fetch')
 
 let morgan = require('morgan')
 
-
-let FileAPI = require('file-api')
-let File = FileAPI.File
-
-let FileReader = require('filereader')
-let fileReader = new FileReader()
 
 /*base64 stuffs here*/
 let base64ToImage = require('base64-to-image')
 
 /*api key*/
-let indico = require('indico.io')
-indico.apiKey = "03df8347024aba09b8b449732fb887c4";
+//let indico = require('indico.io')
+//indico.apiKey = "03df8347024aba09b8b449732fb887c4";
 
 
 let ngrokurl = 'https://hackfresno.ruelas.me' + '/photo/'
