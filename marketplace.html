@@ -37,9 +37,8 @@
         <ul>
           <li ><a href="/">Home</a></li>
           <li class="is-active" ><a href="/marketplace">Marketplace</a></li>
-          <li><a id="username-top" href="#">
-              <span class="tag" id="tag-karma"></span>
-          </a></li>
+          <li><a id="username-top" href="#"></a></li>
+          <li><span class="tag is-success" id="tag-karma"></span></li>
         </ul>
       </div>
                 </div>
@@ -62,19 +61,19 @@
                     <div class="tile is-parent">
                       <article class="tile is-child box">
                         <p class="title">439k</p>
-                        <p class="subtitle">Users</p>
+                        <p class="subtitle">Massage</p>
                       </article>
                     </div>
                     <div class="tile is-parent">
                       <article class="tile is-child box">
                         <p class="title">59k</p>
-                        <p class="subtitle">Products</p>
+                        <p class="subtitle">Hug</p>
                       </article>
                     </div>
                     <div class="tile is-parent">
                       <article class="tile is-child box">
                         <p class="title">3.4k</p>
-                        <p class="subtitle">Open Orders</p>
+                        <p class="subtitle">Back Rub</p>
                       </article>
                     </div>
                     <div class="tile is-parent">
@@ -190,6 +189,13 @@
     </section>
 
 
+    <style media="screen">
+        .box:hover{
+             background-color: #00E5EE;
+        }
+    </style>
+
+
     <script type="text/javascript">
         window.onload = function(){
             storage = window.localStorage;
@@ -198,13 +204,25 @@
             tabusername.innerHTML = username
 
 
+            let currentkarma = document.getElementById('tag-karma')
+
             function getOwnKarma(){
                 fetch('/ownkarma', {
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    method: 'post',
+                    body : JSON.stringify({
+                        username    : storage.getItem('username')
+                    })
 
                 }).then(function(response){
                     return response.json()
                 }).then(function(data){
                     // handle data here
+                    console.log(data)
+                    currentkarma.innerHTML = data.karma
                 })
             }
 
@@ -218,6 +236,19 @@
                 })
 
             }
+
+
+
+
+
+            getOwnKarma()
+
+            var burger = document.querySelector('.burger');
+            var menu = document.querySelector('#'+burger.dataset.target);
+            burger.addEventListener('click', function() {
+                burger.classList.toggle('is-active');
+                menu.classList.toggle('is-active');
+            })
 
 
 

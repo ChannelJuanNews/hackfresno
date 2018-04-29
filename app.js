@@ -254,11 +254,22 @@ app.post('/ownkarma', function(req, res){
         username : req.body.username
     }, function(err, user){
         if (err){
+            console.log(err)
             return res.json(err)
         }
-        res.json({
-            karma : user.karma
-        })
+        if (user){
+            console.log(user)
+            return res.json({
+                karma : user.karma
+            })
+        }
+        else {
+            console.log('no user')
+            return res.json({
+                error :'no user with that username'
+            })
+        }
+
     })
 })
 
@@ -269,6 +280,33 @@ app.post('/spendkarma', function(req, res){
         if (err){
             return res.json(err)
         }
+
+        if (user){
+            if ( (user.karma - req.body.spent) < 0){
+                return res.json({
+                    error : true,
+                    message : "not enough karma"
+                })
+            }
+
+            user.karma = user.karma -  req.body.spent
+            user.save(function(err){
+                if (err){
+                    return res.json(err)
+                }
+                else {
+                    return res.json({
+                        karma : user.karma
+                    })
+                }
+            })
+        }
+        else {
+            res.json({
+                error : 'username does not exist'
+            })
+        }
+
 
     })
 })
