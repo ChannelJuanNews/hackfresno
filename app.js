@@ -28,7 +28,7 @@ let indico = require('indico.io')
 indico.apiKey = "03df8347024aba09b8b449732fb887c4";
 
 
-let ngrokurl = 'https://74427e7b.ngrok.io' + '/photo/'
+let ngrokurl = 'https://hackfresno.ruelas.me' + '/photo/'
 
 
 
@@ -117,7 +117,7 @@ app.get('/photo/:username' + '.jpg', function(req, res){
 })
 
 
-app.listen(3000, function(err){
+app.listen(4040, function(err){
     if (err){
         return console.log(err)
     }
