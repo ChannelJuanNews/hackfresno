@@ -281,7 +281,7 @@
                         // do nothing
                     }
                     else {
-                        totalkarma.innerHTML = Math.round(data.karma)
+                        totalkarma.innerHTML = Number(data.karma).toFixed(2)
                     }
                 })
             }, 3000)
@@ -316,7 +316,7 @@
                         // do nothing
                     }
                     else {
-                        yourkarma.innerHTML = Math.round(data.karma)
+                        yourkarma.innerHTML = Number(data.karma).toFixed(2)
                     }
 
 
@@ -352,7 +352,7 @@
 
                     let htmlstring = ""
                     for (let i = 0; i < response.length; i++){
-                        htmlstring += "<tr id="+(i+1)+">"+"<th>"+ (i+1) +"</th>"+"<td>"+response[i].username +"</td>" + "<td>"+ Math.round(response[i].karma) +"</td>"+ "</tr>"
+                        htmlstring += "<tr id="+(i+1)+">"+"<th>"+ (i+1) +"</th>"+"<td>"+response[i].username +"</td>" + "<td>"+ Number(response[i].karma).toFixed(2) +"</td>"+ "</tr>"
                     }
 
                     console.log(htmlstring)
