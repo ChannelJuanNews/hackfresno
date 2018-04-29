@@ -22,7 +22,7 @@ mongoose.connect('mongodb://admin:hackfresno2018@ds161459.mlab.com:61459/hackfre
 
 
 /*base URL for retreieveing photos*/
-let ngrokurl = 'https://da64dcdb.ngrok.io' + '/photo/'
+let ngrokurl = 'https://hackfresno.ruelas.me' + '/photo/'
 
 /*instantiate express app*/
 let app = express()
